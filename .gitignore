@@ -1,1 +1,9 @@
 currBudget.xlsx
+node_modules/
+dist/
+data/
+*.db
+*.db-wal
+*.db-shm
+budget-backup-*.json
+.DS_Store

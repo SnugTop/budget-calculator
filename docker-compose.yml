@@ -1,0 +1,15 @@
+services:
+  budget:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      # Set to "false" once everyone has a profile, to stop new ones being created.
+      ALLOW_SIGNUP: "true"
+    volumes:
+      # Your budget lives here, outside the container, so it survives restarts and rebuilds.
+      - budget-data:/data
+
+volumes:
+  budget-data:
